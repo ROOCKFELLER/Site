@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+{{block.super}} . Добавление статьи  
+{% endblock %}
+
+{% block content %}
+    <div class="container_form_add_news">
+
+        <h1>Добавление статьи</h1>
+
+        <form action="{% url 'add_news' %}" method="POST" class="form_add_news">
+            {% csrf_token %}
+            {{ form.non_field.errors }}
+            <div class="form_group" id="form_group_title">
+                <label for="{{form.title.id_for_label}}">Название статьи:
+                    {{ form.title }}
+                <div class="invalid_err">
+                    {{ form.title.errors }}
+                </div>
+
+                </label>
+            </div>
+
+            <div class="form_group" id="form_group_content">
+                <label for="{{form.content.id_for_label}}">Содержание статьи:
+                    {{ form.content }}
+                <div class="invalid_err">
+                    {{ form.content.errors }}
+                </div>
+                </label>
+            </div>
+
+            <div class="form_group" id="form_group_select_category">
+                <label for="{{ form.category.id_for_label }}">Выберите категорию:
+                    {{form.category}}
+                <div class="invalid_err">
+                    {{form.category.errors}}
+                </div>
+                </label>
+            </div>
+            
+            <div class="form_group" id="form_group_is_published">
+                <label for="{{ form.is_published.id_for_label }}">Готовность к публикации:
+                    {{form.is_published}}
+                <div class="invalid_err">
+                    {{form.is_published.errors}}
+                </div>
+                </label>
+            </div>
+        
+            <button type="submit" class="button_form_add_news">Отправить</button>
+        </form>
+    </div>
+{% endblock %}

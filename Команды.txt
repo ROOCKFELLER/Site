@@ -1,0 +1,1 @@
+cd C:\Users\roock\OneDrive\Рабочий стол\Programs\Python\Django\site\myth\venv\Scripts&&activate.bat&&cd C:\Users\roock\OneDrive\Рабочий стол\Programs\Python\Django\site\myth\venv\Scripts\myth&&python manage.py runserver

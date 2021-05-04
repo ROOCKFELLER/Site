@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/main.css"/>
+    <title>{% block title %}Сайт{% endblock %}</title>
+  </head>
+<body>
+<header>
+    {% include 'inc/_nav.html' %}
+</header>  
+<main>
+    <div class="main_container" >
+        {% include 'inc/_main_container_list.html' %}
+        {% block main_container-stait %} {% endblock %}
+        {% block content %}{% endblock %}
+    </div>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+<script>
+  function myFunction() {
+    var x = document.getElementById("nav");
+    var e = document.getElementById("con_img_logo");
+    if (x.className === "nav"){
+            x.className += "com";
+    } 
+    else {
+        x.className = "nav";
+    }
+
+    if (e.className === "con_img_logo") {
+        e.className += "com";
+    } else {
+        e.className = "con_img_logo";
+    }
+  }
+</script>
+</html>

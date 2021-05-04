@@ -1,0 +1,12 @@
+<div class="main_container_list_us">
+
+    <div class="us">
+    <a href="">{{arg1}} {{arg2}}</a>
+    </div>
+    
+    <div class="main_container_list">
+        {% for item in categories %}
+        <a href="{% url 'category' item.pk %}">{{item.title}}</a>
+        {% endfor %}
+    </div>
+</div>
