@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/main.css"/>
+    <link rel="stylesheet" href="/static/register.css"/>
     <title>{% block title %}Сайт{% endblock %}</title>
   </head>
 <body>
+<div class="con_sites">
 <header>
     {% include 'inc/_nav.html' %}
 </header>  
@@ -21,23 +23,27 @@
 <footer>
 
 </footer>
-
+</div>
 </body>
 <script>
   function myFunction() {
     var x = document.getElementById("nav");
     var e = document.getElementById("con_img_logo");
-    if (x.className === "nav"){
-            x.className += "com";
+
+    var bb  = document.getElementById("checkbox1");
+    var b = document.getElementById("con_img_logo");
+
+    if (bb.className === "nav"){
+          bb.className += "com";
     } 
     else {
-        x.className = "nav";
+          bb.className = "nav";
     }
 
-    if (e.className === "con_img_logo") {
-        e.className += "com";
+    if (b.className === "con_img_logo") {
+          b.className += "com";
     } else {
-        e.className = "con_img_logo";
+          b.className = "con_img_logo";
     }
   }
 </script>

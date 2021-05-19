@@ -1,4 +1,21 @@
+{% load news_tags %}
+
 <div class="hrader_box">
+   <div class="con_burger">
+      {% show_categories_burger %}
+
+      <div class="container_hamburger">
+         <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+         <label for="checkbox1">
+             <div class="hamburger hamburger1">
+                 <span class="bar bar1"></span>
+                 <span class="bar bar2"></span>
+                 <span class="bar bar3"></span>
+                 <span class="bar bar4"></span>
+             </div>
+         </label>
+      </div>
+   </div>
    <div class="con_img_logo" id="con_img_logo">
       <img src="/media/logo.png" alt="logo" id="img_logo"  chref="javascript:void(0);" onclick="myFunction()">
    </div>
@@ -9,8 +26,10 @@
       <a href="#">Продукты</a>
       <a href="#">Контакты</a>
    </div>
-   <div class="byrger_menu">
-      
+   <div class="cont_us">
+      <span>
+         <a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Вход</a>
+      </span>
    </div>
-
 </div>
+

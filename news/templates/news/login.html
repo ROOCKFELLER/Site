@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+{{block.super}} . Вход
+{% endblock %}
+
+{% block content %}
+<div class="login_container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="container">
+
+        <label for="name_user"><b>Имя</b></label>
+        <input type="text" placeholder="Введите ваше имя" name="name_user" required>
+
+        <label for="secondname_user"><b>Фамилия</b></label>
+        <input type="text" placeholder="Введите вашу фамилию" name="secondname_user" required>
+    
+        <label for="psw"><b>Пароль</b></label>
+        <input type="password" placeholder="Введите пароль" name="psw" required>
+    
+        <div class="clearfix">
+            <button type="button" class="cancelbtn">Отменить</button>
+            <button type="submit" class="signupbtn">Регистрация</button>
+        </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

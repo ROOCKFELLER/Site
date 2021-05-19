@@ -1,0 +1,17 @@
+<div class="main_container_list_burger">
+
+    <div class="us_burger">
+        {{arg1}}
+        <br> 
+        <a href=""></a>
+        {{arg2}}
+
+    </div>
+    
+    <div class="main_container_list_burger_menu">
+        {% for item in categories %}
+        <a href="{% url 'category' item.pk %}">{{item.title}}</a>
+        {% endfor %}
+    </div>
+
+</div>

@@ -5,6 +5,26 @@ from .models import News, Category
 from .forms import NewsForm
 from django.views.generic import ListView, DetailView, CreateView
 from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Успешно')
+            return redirect('login')
+        else:
+            messages.error(request, 'Ошибка')
+    else:
+        form = UserCreationForm()
+    return render(request, 'news/register.html', {'form': form})
+
+
+def login(request):
+    return render(request, 'news/login.html')
 
 class HomeNews(ListView):
     model = News
@@ -45,6 +65,7 @@ class NewsByCategory(ListView):
     #news = News.objects.filter(category_id=category_id)
     #category = Category.objects.get(pk=category_id)
     #return render (request, 'news/category.html', {'news': news,'category': category})
+    
 class ViewNews(DetailView):
     model = News
     context_object_name = 'news_item'
