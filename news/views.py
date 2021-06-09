@@ -37,7 +37,6 @@ def user_logout(request):
     logout(request)
     return redirect('login')
 
-
 class HomeNews(ListView):
     model = News
     template_name = 'news/home_news.html'

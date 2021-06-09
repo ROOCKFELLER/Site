@@ -1,29 +1,22 @@
 {% load news_tags %}
-
 <div class="hrader_box">
-   <div class="con_img_logo" id="con_img_logo">
-      <img src="/media/logo.png" alt="logo" id="img_logo"  chref="javascript:void(0);" onclick="myFunction()">
-   </div>
-   <div class="nav" id = "nav">
-      <a href="{% url 'home' %}">Главная</a>
-      <a href="#">Продукты</a>
-
-      {% if request.user.is_authenticated %}
-      <a href="{% url 'add_news' %}">Добавить статью</a>
-      {% else %}
-      {% endif %}
-
-      <a href="#">Продукты</a>
-      <a href="#">Контакты</a>
-   </div>
-   <div class="cont_us">
-      <span>
+      <div class="nav" id = "nav">
+         <a href="{% url 'home' %}">Главная</a>
+         <a href="#">Продукты</a>
          {% if request.user.is_authenticated %}
-         Добро пожаловать, {{ user.username }} | <a href="{% url 'logout' %}">Выход</a>
+         <a href="{% url 'add_news' %}">Добавить статью</a>
          {% else %}
-         <a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Вход</a>
          {% endif %}
-      </span>
-   </div>
+         <a href="#">Продукты</a>
+         <a href="">Контакты</a>
+      </div>
 </div>
-
+<div class="cont_us">
+   {% if request.user.is_authenticated %}
+   Добро пожаловать, 
+   <br>{{ user.username }}
+   <br><a href="{% url 'logout' %}">Выйти</a>
+   {% else %}
+   <a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Вход</a>
+   {% endif %}
+</div>

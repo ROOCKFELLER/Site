@@ -4,82 +4,127 @@
     box-sizing: border-box;
     font-family: 'Montserrat',Verdana,sans-serif;
     line-height: 24px;
-    font-size: 14px;
+    font-size: inherit;
 }
 
 body{
-    height: 670px;
+    font-family: 'Montserrat',Verdana,sans-serif;
+    font-size: 14px;
+    background-image: radial-gradient(circle at 12.5% 12.5%, #ff82ec 0, #e36ee4 25%, #be55d8 50%, #953fcc 75%, #6c32c5 100%);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    min-height: 1024px;   
+}
+
+.container{
+    width: 70%;
+    background-color: azure;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    min-width: 700px;
 }
 
 /* Шапка */
-.hrader_box{
+header{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
-#img_logo{
-    width: 150px;
+.hrader_box{
+    display: flex;
+    justify-content: space-between;
+    height: 160px;
+    margin: auto;
 }
 
 .nav {
     display: flex;
+    justify-content: center;
 }
 
 .nav a {
-    margin: 10px;
-    padding: 10px;
+    padding: 20px;
     color: black;
     text-decoration:none;
     text-align: center;
 }
 
+.nav a:first-child{
+    padding: 20px 20px 20px 0;
+}
+
+.cont_us{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
 /* Середина сайта */
 .main_container{
+    margin: auto;
+    width: 100%;
     display: flex;
 }
 
 /* Меню слева */
 .main_container_list_us{
-    padding: 5px;
-    width: 250px;
-    margin: 0 20px;
+    width: 20%;
 }
 
 .main_container_list {
-    padding: 5px;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     font-size: 16px;
+
 }
 
 .main_container_list a{
     padding: 10px 0;
     text-decoration: none;
-    padding-left: 10px;
 }
 
-/* Середина сайта */
+/* Середина сайта со статьями*/
+
+.main_container-stait{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
 .card{
+    width: 30%;
     padding: 5px;
-    margin: 0 20px 20px 0;
-}
-
-.card_full{
-    width: 100%;
-}
-
-.midea{
     margin-top: 10px;
 }
 
+#photo_stait{
+    width: 100%;
+}
+
+.card-header{
+    font-size: 12px;
+}
+
 .card-text{
-    padding-bottom: 5px;
+
 }
 
 .card-body a{
     text-decoration: none;
+    color: #6c32c5;
 }
+
+.card-footer{
+    font-size: 12px;
+}
+/* Развернутная статья */ 
+
+.card_full{
+    width: 80%;
+}
+
 
 /* Форма добавления статьи */
 .container_form_add_news{
@@ -200,10 +245,6 @@ h1{
     font-size: 20px;
     text-align: center;
     padding-bottom: 5px;
-}
-
-p{
-    margin: 10px 0;
 }
 
 label{

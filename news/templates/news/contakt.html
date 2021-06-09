@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}
-{{ title }} / {{block.super}}
-{% endblock %}
+{% block title %}Index{% endblock %}
 
 {% block main_container-stait %}
   <div class="main_container-stait">
-    {% for item in news %}
+    {% for item in object_list %}
     <div class="card">
       <div class="card-header">Категория: <a href="{{item.category.get_absolute_url}}">{{item.category}}</a></div>
 
@@ -17,8 +15,7 @@
 
       <div class="card-body">
         <h5 class="card-title">{{item.title}}</h5>
-        <p class="card-text">{{item.content|truncatewords:50}}<a href="{{item.get_absolute_url}}" class="btn success">
-        <br> Далее...</a></p>
+        <p class="card-text">{{item.content|truncatewords:50}}<a href="{{item.get_absolute_url}}" class="btn success">   Далее...</a></p>
         
       </div>
 

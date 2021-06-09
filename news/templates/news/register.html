@@ -1,10 +1,16 @@
-{% extends 'base.html' %}
-{% block title %} 
-{{block.super}} . Регистрация
-{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='/static/login.css'>
+</head>
+<body>
 
-<div class="register_container">
+<div class="con_user_login">
+    {% csrf_token %}
     {% if messages %}
     {% for message in messages %}
       {% if message.tags == 'error' %}
@@ -18,17 +24,19 @@
       {% endif %}
     {% endfor %}
     {% endif %}
-    <form method="post">
+
+    <form method="post" class="user_login">
     {% csrf_token %}
-    <h1>Форма регистрации</h1>
     <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
     <hr>
-    {{ form.as_p }}
+    {{ form.as_table }}
     <div class="clearfix">
-        <button type="button" class="cancelbtn">Отменить</button>
         <button type="submit" class="signupbtn">Регистрация</button>
+        <button type="button" class="cancelbtn">
+        <a href="{% url 'login' %}">Отменить</a></button>
     </div>
     </form>
 </div>
-    
-{% endblock %}
+
+</body>
+</html>
