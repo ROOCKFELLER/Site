@@ -2,99 +2,48 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-body{
     font-family: 'Montserrat',Verdana,sans-serif;
     line-height: 24px;
     font-size: 14px;
 }
 
-.con_sites{
-    position: absolute;
-    width: 80vw;
-    left: 50%;
-    top: 10%;
-    transform: translateX(-50%);
+body{
+    height: 670px;
 }
 
+/* Шапка */
 .hrader_box{
     display: flex;
     align-items: center;
-    line-height: 24px;
-    font-size: 16px;
-    padding-bottom: 5px;
-    box-sizing: border-box;
-}
-
-.con_burger{
-    display: none;
-}
-
-.con_img_logo{
-    width: 250px;
-    margin: 0 20px;
-
+    justify-content: space-around;
 }
 
 #img_logo{
-    position: relative;
-    transform: translateX(-50%);
-    left: 50%;
     width: 150px;
-    object-fit: contain;
 }
 
 .nav {
-
     display: flex;
 }
-.byrger_menu{
-    display: none;
-}
 
-.nav a:first-child {
-    color: rgba(0, 213, 78);
-
-  }
 .nav a {
     margin: 10px;
     padding: 10px;
     color: black;
     text-decoration:none;
     text-align: center;
-    
 }
 
-.nav a:hover {
-    color: black;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    background:  rgba(0, 213, 78, 0.3);
-}
-
-.user{
-
-    background-color: black;
-}
-
+/* Середина сайта */
 .main_container{
-    margin: 20px 0;
     display: flex;
-    align-items: flex-start;
 }
 
+/* Меню слева */
 .main_container_list_us{
     padding: 5px;
     width: 250px;
     margin: 0 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.us{
-    font-size: 16px;
-    margin-bottom: 20px;
 }
 
 .main_container_list {
@@ -102,7 +51,6 @@ body{
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .main_container_list a{
@@ -111,46 +59,18 @@ body{
     padding-left: 10px;
 }
 
-.main_container_list a:nth-child(2n+1) {
-    background:  rgba(0, 213, 78, 0.3);
-   } 
-
-.main_container-stait{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
+/* Середина сайта */
 .card{
     padding: 5px;
     margin: 0 20px 20px 0;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
 }
 
 .card_full{
     width: 100%;
 }
 
-#photo_stait_full{
-    float: left;
-    width: 50%;
-    margin: 0 20px 20px 0;
-}
-
-.card-header{
-    background:  rgba(0, 213, 78, 0.3);
-    padding-left: 5px;
-}
-
 .midea{
     margin-top: 10px;
-
 }
 
 .card-text{
@@ -161,272 +81,7 @@ body{
     text-decoration: none;
 }
 
-.card-footer{
-    font-size: 12px;
-    background:  rgba(0, 213, 78, 0.3);
-    padding-left: 5px;
-}
-
-footer{
-    background:  rgba(0, 213, 78, 0.3);
-}
-
-#photo_stait{
-    width: 100%;
-}
-
-@media all and (max-width: 800px){
-   
-    .con_sites{
-        position: absolute;
-        width: 100%;
-        left: 0%;
-        top: 0%;
-        transform: translateX(0%);
-    }
-
-    .hrader_box{
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        line-height: 24px;
-        font-size: 14px;
-    }
-
-
-    .main_container_list_burger{
- 
-    }
-
-    .main_container_list_burger_menu{
-        display: none;
-    }
-
-    .nav{
-        top: 10%;
-        display: flex;
-    }
-
-    .main_container_list_us{
-        display: none;
-    }
-
-
-    .container_hamburger{
-        width: 30px;
-        height: 30px;
-    }
-    
-    .visuallyHidden {
-        position: absolute; 
-        overflow: hidden; 
-        clip: rect(0 0 0 0); 
-        height: 1px; width: 1px; 
-        margin: -1px; padding: 0; border: 0; 
-    }
-    
-    .hamburger {
-        margin: 0 auto;
-        width: 30px;
-        height: 30px;
-        position: relative;
-    }
-    
-    .hamburger .bar {
-        padding: 0;
-        width: 30px;
-        height: 4px;
-        background-color: maroon;
-        display: block;
-        border-radius: 4px;
-        transition: all 0.4s ease-in-out;
-        position: absolute; 
-    }
-    
-    .bar1 {
-        top: 0;
-    }
-    
-    .bar2,
-    .bar3 {
-        top: 13.5px;
-    }
-    
-    .bar3 {
-        right: 0;
-    }
-    
-    .bar4 {
-        bottom: 0;
-    }
-    
-    .checkbox1:checked + label > .hamburger1 > .bar1{
-        transform: rotate(45deg);
-        transform-origin: 5%;
-        width: 41px
-    }
-    
-    .checkbox1:checked + label > .hamburger1 > .bar2 {
-        transform: translateX(-40px);
-        background-color: transparent;
-    }
-    
-    .checkbox1:checked + label > .hamburger1 > .bar3 {
-        transform: translateX(40px);
-        background-color: transparent;
-    }
-    
-    .checkbox1:checked + label > .hamburger1 > .bar4 {
-        transform: rotate(-45deg);
-        transform-origin: 5%;
-        width: 41px;
-    }
-
-    .main_container{
-        margin: 50px 0;
-        display: block;
-    }
-
-    
-    .main_container-stait{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-    .card{
-        margin: 10px auto;
-    }
-
-    .card-header{
-        font-size: 12px;
-        padding: 0;
-        margin: 0;
-    }
-
-    .card-text{
-        line-height: 24px;
-        font-size: 14px;
-    }
-
-    .container_form_add_news{
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        padding: 20px 100px 20px 50px;
-        margin: auto;
-    }
-}
-
-@media all and (max-width: 800px){
-
-    .con_burgercom{
-        padding: 10px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .main_container_list_burgercom{
-        display: flex;
-        width: 100%;
-        align-items: center;
-        padding: 0 10px;
-    }
-
-    .main_container_list_burger_menucom{
-        display: flex;
-        align-items: center;
-        padding: 0 50px;
-    }
-
-    .main_container_list_burger_menucom a{
-        margin: 0 10px;
-    }
-
-    .us_burger{
-
-    }
-}
-
-@media all and (max-width: 500px) {
-
-    .nav, .byrger_menu{
-        display: none;
-    }
-
-    .con_img_logo{
-        height: 100%;
-        width: auto;
-    }
-
-    .main_container_list{
-        display: none;
-    }
-
-    .main_container-stait{
-        
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .card{
-        width: 100%;
-    }
-
-    .card-body{
-        padding: 5px;
-    }
-
-    .card-footer{
-        padding: 5px;
-    }
-}
-
-@media all and (max-width: 500px) {
-
-    .hrader_box{
-        padding: 0;
-        margin: 0;
-        font-size: 40px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        width: auto;
-    }
-
-    .navcom{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        
-    }
-
-    .navcom a{
-        font-size: 30px;
-        margin: 10px auto;
-
-  
-    }
-
-    .con_img_logocom{
-        display: none;
-    }
-
-    .main_container{
-        margin: 0;
-    }
-
-    
-
-
-}
-
+/* Форма добавления статьи */
 .container_form_add_news{
     display: flex;
     flex-direction: column;
@@ -515,3 +170,71 @@ footer{
     padding-top: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+
+/* Форма регистрации */
+
+.register_container{
+    width: 50%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.register_error p{
+    color: #f44336;
+}
+
+.errorlist{
+    list-style: none;
+    padding-left: 32.5%;
+    font-size: 12px;
+}
+.errorlist li{
+    font-size: 12px;
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+p{
+    margin: 10px 0;
+}
+
+label{
+    float: left;
+    width: 30%;
+    margin-left: 20px;
+}
+
+input{
+    
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+.cancelbtn {
+    background-color: #f44336;
+}
+
+.clearfix{
+
+}
+
+.cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }

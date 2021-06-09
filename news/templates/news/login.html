@@ -1,29 +1,45 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='/static/login.css'>
+</head>
+<body>
+  <div class="con_user_login">
 
-{% block title %} 
-{{block.super}} . Вход
-{% endblock %}
-
-{% block content %}
-<div class="login_container">
-    <form method="post">
-        {% csrf_token %}
-        <div class="container">
-
-        <label for="name_user"><b>Имя</b></label>
-        <input type="text" placeholder="Введите ваше имя" name="name_user" required>
-
-        <label for="secondname_user"><b>Фамилия</b></label>
-        <input type="text" placeholder="Введите вашу фамилию" name="secondname_user" required>
-    
-        <label for="psw"><b>Пароль</b></label>
-        <input type="password" placeholder="Введите пароль" name="psw" required>
-    
-        <div class="clearfix">
-            <button type="button" class="cancelbtn">Отменить</button>
-            <button type="submit" class="signupbtn">Регистрация</button>
-        </div>
-        </div>
+    <form class="user_login" method="POST">
+      {{ form.as_table }}
+      {% csrf_token %}
+      {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == 'error' %}
+          <div class="register_error" role="alert">
+            <p>Ошибка регистрации</p>
+          </div>
+        {% else %}
+          <div class="register success" role="alert">
+            <p>Успешно</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+      <div class="clearfix">
+          <button type="submit" class="signupbtn">Вход</button>
+      </div>
+      <div class="cont_registr">
+          <a href="{% url 'register' %}">Регистрация</a>
+          <a href="">Забыли пароль?</a>
+      </div>
     </form>
-</div>
-{% endblock %}
+
+  </div>
+
+</body>
+</html>
+
+
+
+

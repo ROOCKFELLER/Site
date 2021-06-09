@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/main.css"/>
-    <link rel="stylesheet" href="/static/register.css"/>
     <title>{% block title %}Сайт{% endblock %}</title>
   </head>
 <body>
-<div class="con_sites">
 <header>
     {% include 'inc/_nav.html' %}
 </header>  
@@ -16,35 +14,10 @@
     <div class="main_container" >
         {% include 'inc/_main_container_list.html' %}
         {% block main_container-stait %} {% endblock %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
 </main>
 
-<footer>
-
-</footer>
-</div>
 </body>
-<script>
-  function myFunction() {
-    var x = document.getElementById("nav");
-    var e = document.getElementById("con_img_logo");
-
-    var bb  = document.getElementById("checkbox1");
-    var b = document.getElementById("con_img_logo");
-
-    if (bb.className === "nav"){
-          bb.className += "com";
-    } 
-    else {
-          bb.className = "nav";
-    }
-
-    if (b.className === "con_img_logo") {
-          b.className += "com";
-    } else {
-          b.className = "con_img_logo";
-    }
-  }
-</script>
 </html>
